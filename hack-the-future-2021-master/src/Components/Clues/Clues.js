@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
+import { CluesContext } from "../Main";
 
 /*
    AANWIJZINGEN
@@ -7,6 +9,8 @@ import React from "react";
 */
 
 const Clues = () => {
+  const clues = useContext(CluesContext);
+  console.log(clues);
   return (
     <div className="full file">
       <h2>Aanwijzingen</h2>
