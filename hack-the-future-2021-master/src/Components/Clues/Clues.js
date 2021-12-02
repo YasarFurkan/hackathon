@@ -19,9 +19,9 @@ const Clues = () => {
       <table>
         <tr>
           <th>id</th>
-          <th>type</th>
-          <th>title</th>
-          <th>image</th>
+          <th>type wapen</th>
+          <th>naam</th>
+          <th>foto</th>
         </tr>
           <CluesContext.Consumer>{value => value.map(clue => 
           <tr>
