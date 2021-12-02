@@ -1,6 +1,5 @@
 import React, { Component, useContext, useEffect } from "react";
 import { CluesContext } from "../Main";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 const axios = require('axios');
 
 /*
