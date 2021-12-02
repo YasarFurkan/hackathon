@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from "react";
-
+import React, { Component, useContext, useEffect } from "react";
 import { CluesContext } from "../Main";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+const axios = require('axios');
 
 /*
    AANWIJZINGEN
@@ -8,13 +9,29 @@ import { CluesContext } from "../Main";
    Lijst hier de kamers, wapens en verdachten op.
 */
 
+
+
 const Clues = () => {
-  const clues = useContext(CluesContext);
-  console.log(clues);
-  return (
+  var clues = useContext(CluesContext)
+  return ( 
     <div className="full file">
       <h2>Aanwijzingen</h2>
-      <div>Lijst hier de kamers, wapens en verdachten op.</div>
+      <table>
+        <tr>
+          <th>id</th>
+          <th>type</th>
+          <th>title</th>
+          <th>image</th>
+        </tr>
+          <CluesContext.Consumer>{value => value.map(clue => 
+          <tr>
+            <td>{clue.id}</td>
+            <td>{clue.type}</td>
+            <td>{clue.title}</td>
+            <td>{clue.image}</td>
+            </tr>)}
+          </CluesContext.Consumer>
+      </table>
     </div>
   );
 };

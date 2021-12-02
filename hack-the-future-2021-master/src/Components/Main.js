@@ -35,8 +35,17 @@ export const Main = () => {
     });
   }, [setSettings]);
 
+  const getClues = async () => {
+    await axios.get(
+      `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_URL_CLUES}`,
+      { auth: settings.auth }
+    );
+  };
   useEffect(() => {
     if (settings) {
+      console.log(settings.auth);
+
+      // 
       axios
         .get(`${settings.baseURL}${settings.url.clues}`, {
           auth: settings.auth,
